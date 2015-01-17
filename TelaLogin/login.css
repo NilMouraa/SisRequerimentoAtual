@@ -1,0 +1,41 @@
+body{
+    font-family: 'Kaushan Script', cursive;
+    background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+}
+.modal-dialog {
+    width: 300px;
+}
+.modal-footer {
+    height: 70px;
+    margin: 0;
+}
+.modal-footer .btn {
+    font-weight: bold;
+}
+.modal-footer .progress {
+    display: none;
+    height: 32px;
+    margin: 0;
+}
+.input-group-addon {
+    color: #fff;
+    background: #3276B1;
+}
+.panel-heading {
+    padding: 5px 15px;
+}
+
+.panel-footer {
+	padding: 1px 15px;
+	color: #A0A0A0;
+}
+
+.profile-img {
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	display: block;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
