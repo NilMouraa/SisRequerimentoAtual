@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include './gerateJson.php';?>
 <html>
     <head>
 	
@@ -129,7 +130,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="reqNovos.php"><i class="fa fa-angle-double-right"></i> Novos 
-                                        <small class="badge pull-right bg-red">label2</small></a></li>
+                                        <small class="badge pull-right bg-red"><?= novosLable()  ?></small></a></li>
                                 
                                 <li><a href="reqPendentes.php"><i class="fa fa-angle-double-right"></i> Pendentes</a></li>
                                 <li><a href="reqDeferidos.php"><i class="fa fa-angle-double-right"></i> Deferidos</a></li>

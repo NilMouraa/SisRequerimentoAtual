@@ -210,7 +210,7 @@
             return 'Search';
         },
         formatNoMatches: function () {
-            return 'No matching records found';
+            return 'Não existe dados!';
         },
         formatRefresh: function () {
 		

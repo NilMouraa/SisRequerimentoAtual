@@ -3,13 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/reqIndeferidos.php</file>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/reqNovos.php</file>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/reqPendentes.php</file>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/reqDeferidos.php</file>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/reqTodos.php</file>
+            <file>file:/C:/wamp/www/SisRequerimentoAtual/gerateJson.php</file>
             <file>file:/C:/wamp/www/SisRequerimentoAtual/index.php</file>
-            <file>file:/C:/wamp/www/SisRequerimentoAtual/BootstrapTable/dados/dataDeferidos.json</file>
         </group>
     </open-files>
 </project-private>

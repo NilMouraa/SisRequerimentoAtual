@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include './gerateJson.php';?>
 <html>
     <head>
 
@@ -191,7 +192,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="reqNovos.php"><i class="fa fa-angle-double-right"></i> Novos 
-                                        <small class="badge pull-right bg-red">label2</small></a></li>
+                                        <small class="badge pull-right bg-red"><?= novosLable()  ?></small></a></li>
 
                                 <li><a href="reqPendentes.php"><i class="fa fa-angle-double-right"></i> Pendentes</a></li>
                                 <li><a href="reqDeferidos.php"><i class="fa fa-angle-double-right"></i> Deferidos</a></li>
@@ -249,7 +250,7 @@
 
                     <table id="table" data-toggle="table"
                            data-height="518"
-                           data-url="BootstrapTable/dados/dataPendentes.json"
+                           data-url="BootstrapTable/dados/dataPendentes.php"
                            data-click-to-select="true"
                            data-pagination="true"
                            data-query-params="queryParams"
@@ -262,9 +263,9 @@
                         <thead>
                             <tr>
 
-                                    <th data-field="id">Nome</th>
-                                    <th data-field="name">Período</th>
-                                    <th data-field="price">Situação</th>
+                                    <th data-field="nome">Nome</th>
+                                    <th data-field="periodo">Período</th>
+                                    <th data-field="situacao">Situação</th>
                                     <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Ações</th>
                             </tr>
                         </thead>

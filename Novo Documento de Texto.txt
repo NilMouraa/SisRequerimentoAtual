@@ -1,1 +1,0 @@
-json encode - criar um array e gerar um json

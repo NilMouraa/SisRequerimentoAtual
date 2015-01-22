@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include './gerateJson.php';?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -112,7 +113,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="reqNovos.php"><i class="fa fa-angle-double-right"></i> Novos 
-                                        <small class="badge pull-right bg-red">label2</small></a></li>
+                                        <small class="badge pull-right bg-red"><?= novosLable()  ?></small></a></li>
                                 
                                 <li><a href="reqPendentes.php"><i class="fa fa-angle-double-right"></i> Pendentes</a></li>
                                 <li><a href="reqDeferidos.php"><i class="fa fa-angle-double-right"></i> Deferidos</a></li>
@@ -240,19 +241,20 @@
                 var area = new Morris.Area({
                     element: 'revenue-chart',
                     resize: true,
-                    data: [
-                        {y: '2011 Q1', item1: 10, item2: 20},
-                        {y: '2011 Q2', item1: 5, item2: 7},
-                        
-                        {y: '2012 Q1', item1: 20, item2: 5},
-                        {y: '2012 Q2', item1: 30, item2: 22},
-                       
-                        {y: '2013 Q1', item1: 12, item2: 2},
-                        {y: '2013 Q2', item1: 40, item2: 50}
-                    ],
                     xkey: 'y',
-                    ykeys: ['item1', 'item2'],
-                    labels: ['Com Quebra', 'Sem Quebra'],
+//                    data: [
+//                        {y: '2011 Q1', item1: 30.5, item2: 22.5},
+//                        {y: '2011 Q2', item1: 5, item2: 7},
+//                        
+//                        {y: '2012 Q1', item1: 20, item2: 5},
+//                        {y: '2012 Q2', item1: 30, item2: 22},
+//                       
+//                        {y: '2013 Q1', item1: 1, item2: 21},
+//                        {y: '2013 Q2', item1: 40, item2: 50}  ],
+                   data:<?= gerateJsonArea()  ?>,                    
+                    ykeys: ['item2','item1'],
+                          
+                    labels: ['Sem Quebra', 'Com Quebra'],
                     lineColors: ['#a0d0e0', '#f39c12'],
                     hideHover: 'auto'
                 });
@@ -261,16 +263,17 @@
                 var line = new Morris.Line({
                     element: 'line-chart',
                     resize: true,
-                    data: [
-                        {y: '2011 Q1', item1: 4},
-                        {y: '2011 Q2', item1: 5},
-                        {y: '2012 Q1', item1: 2},
-                        {y: '2012 Q2', item1: 7},
-                        {y: '2013 Q1', item1: 9},
-                        {y: '2013 Q2', item1: 20}
-						
-						
-                    ],
+//                    data: [
+//                        {y: '2011 Q1', item1: 4},
+//                        {y: '2011 Q2', item1: 5},
+//                        {y: '2012 Q1', item1: 2},
+//                        {y: '2012 Q2', item1: 7},
+//                        {y: '2013 Q1', item1: 9},
+//                        {y: '2013 Q2', item1: 20}
+//						
+//						
+//                    ],
+                    data: <?= gerateJsonLine()  ?>,
                     xkey: 'y',
                     ykeys: ['item1'],
                     labels: ['Quant'],
@@ -283,32 +286,37 @@
                     element: 'sales-chart',
                     resize: true,
                     colors: ["#3c8dbc", "#f56954", "#00a65a", "#f39c12"],
-                    data: [
-                        {label: "Novos", value: 12},
-                        {label: "Indeferidos", value: 30},
-                        {label: "Pendentes", value: 20},
-						{label: "Deferidos", value: 38}
-						
-                    ],
+//                    data: [
+//                        {label: "Novos", value: 12},
+//                        {label: "Indeferidos", value: 30},
+//                        {label: "Pendentes", value: 20},
+//						{label: "Deferidos", value: 38}
+//						
+//                    ],
+                    data: <?= gerateJsonDonut()  ?>,
                     hideHover: 'auto'
                 });
                 //Num maior de quebras
                 var bar = new Morris.Bar({
                     element: 'bar-chart',
                     resize: true,
-                    data: [
-                        {y: '2006', a: 10, b: 9, c: 20, d: 12},
-                        {y: '2007', a: 15, b: 12, c: 10, d: 9},
-                        {y: '2008', a: 5, b: 31, c: 20, d: 9},
-                        {y: '2009', a: 7, b: 12, c: 9, d: 18},
-                        {y: '2010', a: 20, b: 10, c: 16, d: 17},
-                        {y: '2011', a: 15, b: 4, c: 20, d: 32},
-                        {y: '2012', a: 10, b: 22, c: 9, d: 18}
-                    ],
+//                    data: [
+////                        {y: '2006', a: 10, b: 9, c: 20, d: 12},
+////                        {y: '2007', a: 15, b: 12, c: 10, d: 9},
+////                        {y: '2008', a: 5, b: 31, c: 20, d: 9},
+//                        {y: '2010', a: 7, b: 12, c: 9, d: 18},
+//                        {y: '2011', a: 20, b: 10, c: 16, d: 17},
+//                        {y: '2012', a: 15, b: 4, c: 20, d: 32},
+//                        {y: '2013', a: 10, b: 22, c: 9, d: 18}
+//                    ],
+                    data: <?= gerateJsonBar()  ?>,
                     barColors: ['#00a65a', '#f56954', '#f39c12','#3c8dbc'],
                     xkey: 'y',
                     ykeys: ['a', 'b', 'c', 'd'],
-                    labels: ['CALC I','FIS II','FIS III','AL'],
+//                    labels: ['CALC I','FIS II','FIS III','AL'],
+                    //labels:[<?php echo("'CALC I'".","."'CALC II'".","."'CALC III'".","."'CALC IV'") ?>],
+                    //labels:<?= returna_NameMirroBar() ?>,
+                    labels: ['<?= returna_NameMirroBar(1) ?>','<?= returna_NameMirroBar(2) ?>','<?= returna_NameMirroBar(3) ?>','<?= returna_NameMirroBar(4) ?>'],
                     hideHover: 'auto'
                 });
             });

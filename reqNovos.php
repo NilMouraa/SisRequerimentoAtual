@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php 
+include '/gerateJson.php';
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,7 +11,7 @@
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!--BootstrapTable-->
-        <link rel="stylesheet" href="BootstrapTable//css/bootstrap-table.css">
+        <link rel="stylesheet" href="BootstrapTable/css/bootstrap-table.css" />
 
         <!-- bootstrap wysihtml5 - text editor -->
         <link href="css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
@@ -38,26 +43,32 @@
         </style>
 
         <script>
+            
+              
+              
             window.actionEvents = {
                 'click .view': function (e, value, row, index) {
                     //alert('You click like icon, row: ' + JSON.stringify(row));
+                    alert(index);
                     console.log(value, row, index);
-
+                    
                 },
                 'click .edit': function (e, value, row, index) {
-                    //alert('You click edit icon, row: ' + JSON.stringify(row));
+                    alert('You click edit icon, row: ' + JSON.stringify(row));
                     console.log(value, row, index);
+                    carregaModal(value,'e');
 
                 },
                 'click .print': function (e, value, row, index) {
-                    //alert('You click remove icon, row: ' + JSON.stringify(row));
+                    alert('You click remove icon, row: ' + JSON.stringify(row));
                     console.log(value, row, index);
+                    carregaModal(value,'p');
 
                 },
                 'click .hist': function (e, value, row, index) {
-                    //alert('You click remove icon, row: ' + JSON.stringify(row));
-
+                    alert('You click remove icon, row: ' + JSON.stringify(row));
                     console.log(value, row, index);
+                    carregaModal(value,'h');
                 }
             };
 
@@ -97,6 +108,9 @@
 
 
             }
+            
+          
+            
             window.onload = function () {
                 $('#table').bootstrapTable('resetView');
             };
@@ -225,7 +239,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="reqNovos.php"><i class="fa fa-angle-double-right"></i> Novos 
-                                        <small class="badge pull-right bg-red">label2</small></a></li>
+                                        <small class="badge pull-right bg-red"><?= novosLable()  ?></small></a></li>
 
                                 <li><a href="reqPendentes.php"><i class="fa fa-angle-double-right"></i> Pendentes</a></li>
                                 <li><a href="reqDeferidos.php"><i class="fa fa-angle-double-right"></i> Deferidos</a></li>
@@ -285,8 +299,9 @@
 
                         <table id="table" data-toggle="table"
                                data-height="518"
-                               data-url="BootstrapTable/dados/dataNovos.json"
-                               data-click-to-select="true"
+                               
+                               data-url= 'BootstrapTable/dados/dataNovos.php'
+                               data-url= 'BootstrapTable/dados/dataNovos.php'data-click-to-select="true"
                                data-pagination="true"
                                data-query-params="queryParams"
                                data-search="true"
@@ -298,9 +313,9 @@
                             <thead>
                                 <tr>
 
-                                    <th data-field="id">Nome</th>
-                                    <th data-field="name">Período</th>
-                                    <th data-field="price">Situação</th>
+                                    <th data-field="nome">Nome</th>
+                                    <th data-field="periodo">Período</th>
+                                    <th data-field="situacao">Situação</th>
                                     <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents">Ações</th>
                                 </tr>
                             </thead>
